@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #191919;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    width: 40%;
+    margin: auto;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh;
+    gap: 3rem;
+    position: relative;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#karakterSayisi {
+    width: 100%;
+    padding: 1.4rem;
+    text-align: center;
+    outline: none;
+    caret-color: green;
+    border-radius: .7rem;
+    border: none;
+    background: #000;
+    font-size: 25px;
+    color: #17ff00;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#karakterSayisi::placeholder {
+    font-size: 18px;
+    color: rgb(81, 81, 81);
+    text-shadow: 1px 0 0#9d9d9d;
+    letter-spacing: 0.5px;
+}
+
+label {
+    font-size: 18px;
+    color: grey;
+    text-shadow: 2px 0 0#000;
+}
+
+#olustur {
+    width: 100%;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    background: #0d6efd;
+    color: rgb(219, 210, 196);
+    font-size: 15px;
+    cursor: pointer;
+    text-shadow: 1.3px 0 0 #303030;
+    transition: all .4s;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+#olustur:hover {
+    color: #20a214;
+    background: #003e9a;
+    text-shadow: 1.3px 0 0 #000000;
+}
+
+#output {
+    font-family: 'Roboto Mono', monospace;
+    width: 100%;
+    background: linear-gradient(145deg, rgb(0, 37, 14), rgb(27, 27, 27), rgb(0, 26, 15), rgb(12, 12, 12));
+    background-size: 400%;
+    animation: gradient 20s linear infinite;
+    padding: .5rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    text-shadow: .5px 0 0 #a1a1a1;
+    color: rgb(27, 27, 27);
+}
+
+.loadingParent {
+    width: 95%;
+    height: 1vh;
+    position: relative;
+    overflow-x: hidden;
+    position: absolute;
+    bottom: 165px;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    display: none;
+    width: 50%;
+    height: 2px;
+    background: green;
+    border-radius: 1rem;
+}
+
+@keyframes loadingAnimation {
+
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(200%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes gradient {
+
+    100%,
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes error {
+
+    100%,
+    0% {
+        color: rgb(67, 54, 54);
+        text-shadow: 1px 1px 0 #000000;
+    }
+
+    50% {
+        color: white;
+        text-shadow: 1px 1px 0 #000000;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .loadingParent{
+        bottom: 120px !important;
+    }
+    #karakterSayisi::placeholder {
+        font-size: 15px;
+    }
+
+    #karakterSayisi {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:945px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:645px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:455px) {
+    .container {
+        width: 90%;
+    }
+
+    #karakterSayisi::placeholder {
+        font-size: 12px;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    #karakterSayisi,
+    label {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .container {
+        width: 98%;
+    }
+}

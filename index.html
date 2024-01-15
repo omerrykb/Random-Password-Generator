@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="parent">
+            <input type="text" id="karakterSayisi" placeholder="Oluşturulacak şifrenin uzunluğunu belirleyiniz">
+            <form action="">
+                <div class="checkboxs">
+                    <label for="harf" class="harfLabel">Harf</label>
+                    <input type="checkbox" id="harf" class="checkbox">
+                </div>
+                <div class="checkboxs">
+                    <label for="rakam" class="rakamLabel">Rakam</label>
+                    <input type="checkbox" id="rakam" class="checkbox">
+                </div>
+                <div class="checkboxs">
+                    <label for="ozelKarakter" class="specialLabel">Özel Karakterler</label>
+                    <input type="checkbox" id="ozelKarakter" class="checkbox">
+                </div>
+            </form>
+            <button id="olustur">Oluştur</button>
+            <h4 id="output">Your Password</h4>
+            <div class="loadingParent">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
